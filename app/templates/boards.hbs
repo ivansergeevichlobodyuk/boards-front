@@ -1,13 +1,10 @@
 <table>
   <tr>
     {{#each filteredBoards as |board|}}
-      <td>
-        <table>
-          <tr>
-            <td>{{board.name}}</td><td>count items = {{ board.count }}</td>
-          </tr>
-        </table>
-      </td>
+      {{#board-task item=board}}
+
+      {{/board-task}}
+
     {{/each}}
   </tr>
 </table>
