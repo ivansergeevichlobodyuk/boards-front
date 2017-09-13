@@ -2,9 +2,12 @@
   <tr>
     {{#each filteredBoards as |board|}}
       {{#board-task item=board}}
-
       {{/board-task}}
-
     {{/each}}
   </tr>
 </table>
+{{#link-to "boards.new"}}
+  <button>Add</button>
+{{/link-to}}
+
+{{outlet}}
