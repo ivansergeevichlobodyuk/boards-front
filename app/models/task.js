@@ -6,5 +6,5 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   introText: DS.attr('string'),
   fullText: DS.attr('string'),
-  board: DS.belongsTo('board')
+  board: DS.attr('number')
 });
