@@ -1,5 +1,6 @@
 {
   "name": "trello-board",
   "dependencies": {
+    "uikit": "^2.27.4"
   }
 }

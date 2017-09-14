@@ -12,5 +12,7 @@ export default Ember.Controller.extend({
         } else {
           return boards;
         }
-      })
-});
+      }),
+
+
+  });

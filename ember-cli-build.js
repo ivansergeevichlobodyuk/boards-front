@@ -6,6 +6,15 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
   });
+  app.import('bower_components/uikit/css/uikit.css');
+  app.import('bower_components/uikit/js/uikit.js');
+  app.import('bower_components/uikit/js/components/notify.js');
+  app.import('bower_components/uikit/css/components/notify.css');
+  // app.import('bower_components/uikit/js/fonts/FontAwesome.otf');
+  // app.import('bower_components/uikit/js/fonts/fontawesome-webfont.ttf');
+  // app.import('bower_components/uikit/js/fonts/fontawesome-webfont.woff');
+  // app.import('bower_components/uikit/js/fonts/fontawesome-webfont.woff2');
+
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

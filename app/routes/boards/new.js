@@ -10,10 +10,11 @@ export default Ember.Route.extend({
     submition(){
       let board = this.store.createRecord('board', {
         "name": this.controller.get('model.name'),
-        "count": 1,
+        "count": 0,
       });
 
       board.save().then(() => {
+          UIkit.notify("New board was added");
           this.transitionTo('boards');
         }
       );
