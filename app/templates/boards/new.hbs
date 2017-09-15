@@ -1,0 +1,11 @@
+{{outlet}}
+
+<form class="uk-form uk-width-medium-1-3" method="post" {{ action "submition" on="submit"}}>
+  <fieldset>
+    <legend>Add new board</legend>
+    <div class="uk-form-row">
+      {{input type="text" name="name" value=model.name}}
+      {{input class="uk-button" type="submit" value="Add"}}
+    </div>
+  </fieldset>
+</form>
