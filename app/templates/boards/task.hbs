@@ -19,7 +19,7 @@
       {{input type="text" name="fullText"  placeholder="fullText" value=model.task.fullText}}
       <select {{ action "selectBoard" value="target.value" }} id="tag-type-select" >
         {{#each model.board as |board| }}
-          <option name="board" selected={{eq id model.board}} value="{{board.id}}">
+          <option name="board" selected={{eq model.boardItem.id board.id}} value="{{board.id}}">
             {{board.name}}
           </option>
         {{/each}}
