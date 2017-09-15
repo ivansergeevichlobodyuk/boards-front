@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       task: this.get('store').peekRecord('task',params.task_id),
       board: this.get('store').findAll('board'),
-    });
+    })
   },
 
 });
