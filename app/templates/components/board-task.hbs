@@ -1,9 +1,17 @@
   <div class="uk-scrollable-box">
     <div>{{item.name}}( {{item.count}} )</div>
     <ul class="uk-list">
+
       {{#each item.task as |task| }}
-        <li><label>{{task.title}}</label></li>
+          <li>
+            <label>
+              {{#link-to "boards.taskitem" item.id task.id}}
+                  {{task.title}}
+              {{/link-to}}
+            </label>
+          </li>
       {{/each}}
+
       <li>
         <label>
               {{#link-to "boards.task" item.id}}
@@ -11,5 +19,6 @@
               {{/link-to}}
         </label>
       </li>
+
     </ul>
   </div>
