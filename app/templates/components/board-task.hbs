@@ -1,7 +1,6 @@
   <div class="uk-scrollable-box">
-    <div>{{item.name}}( {{item.count}} )</div>
+    <div>{{board-edit item=item }}</div>
     <ul class="uk-list">
-
       {{#each item.task as |task| }}
           <li>
             <label>
@@ -11,7 +10,6 @@
             </label>
           </li>
       {{/each}}
-
       <li>
         <label>
               {{#link-to "boards.task" item.id}}
@@ -19,6 +17,5 @@
               {{/link-to}}
         </label>
       </li>
-
     </ul>
   </div>

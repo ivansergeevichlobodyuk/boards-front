@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
   actions: {
     submition(){
       let tasks = this.store.createRecord('task', {
@@ -12,7 +11,6 @@ export default Ember.Controller.extend({
         "fullText": this.get('model.task.fullText'),
         "board": this.get('model.task.board'),
       });
-
       tasks.save().then(() => {
         this.get('store').findAll('board');
         UIkit.notify("New board was added");
