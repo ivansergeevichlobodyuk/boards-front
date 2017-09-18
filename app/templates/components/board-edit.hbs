@@ -1,10 +1,16 @@
 <div>
+{{ log 'validation data ' validationData }}
+
+
+
   {{#if showEdit}}
     <div>
-      {{input type="text" value=item.name change=(action 'saveBoard' item ) }}
-      <button {{ action "saveBoard" item }}>
-        Edit name
-      </button>
+      {{#if validationData.name }}
+      <div class="uk-alert uk-alert-danger">
+        {{validationData.name}}
+      </div>
+      {{/if}}
+      {{input type="text" class=(if validationData.name "uk-form-danger" "") value=item.name change=(action 'saveBoard' item ) }}
     </div>
   {{else}}
     <div {{action "editBoard" }}>{{item.name}}( {{item.count}} )</div>
