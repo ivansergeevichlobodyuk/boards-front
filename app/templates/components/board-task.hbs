@@ -1,21 +1,23 @@
-  <div class="uk-scrollable-box">
-    <div>{{board-edit item=item }}</div>
-    <ul class="uk-list">
-      {{#each item.task as |task| }}
-          <li>
-            <label>
-              {{#link-to "boards.taskitem" item.id task.id}}
-                  {{task.title}}
-              {{/link-to}}
-            </label>
-          </li>
-      {{/each}}
-      <li>
-        <label>
-              {{#link-to "boards.task" item.id}}
-                  Add new board
-              {{/link-to}}
-        </label>
-      </li>
-    </ul>
+  <div class="uk-panel uk-panel-box uk-panel-box-primary">
+    <div class="uk-block-primary">{{board-edit item=item }}</div>
+        <div class="uk-block-default">
+            <ul class="uk-list uk-list-stripped">
+              {{#each item.task as |task| }}
+                  <li>
+                    <label>
+                      {{#link-to "boards.taskitem" item.id task.id}}
+                          {{task.title}}
+                      {{/link-to}}
+                    </label>
+                  </li>
+              {{/each}}
+              <li>
+                <label>
+                      {{#link-to "boards.task" item.id}}
+                          Add new board
+                      {{/link-to}}
+                </label>
+              </li>
+            </ul>
+        </div>
   </div>

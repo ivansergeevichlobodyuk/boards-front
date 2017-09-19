@@ -12,4 +12,13 @@
     </tr>
   </table>
 </div>
-{{outlet}}
+
+<div class="uk-panel-box uk-width-1-10">
+  {{#link-to "boards.new"}}
+    <button class="uk-button">Add</button>
+  {{/link-to}}
+</div>
+
+<div class="uk-panel-box-primary uk-width-1-6 uk-align-center">
+  {{outlet}}
+</div>

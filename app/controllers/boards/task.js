@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  validationData: new Array(),
   actions: {
     submition(){
       let tasks = this.store.createRecord('task', {
@@ -15,7 +16,14 @@ export default Ember.Controller.extend({
         this.get('store').findAll('board');
         UIkit.notify("New board was added");
         this.transitionToRoute('boards');
-      }
+      },
+        (error) => {
+          var validation = new Array();
+          error.errors.forEach(function (val, inx) {
+            validation[val.source.pointer] = val.detail;
+          });
+          this.set('validationData', validation);
+        }
     );
     },
     selectBoard(){

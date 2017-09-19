@@ -1,20 +1,68 @@
-<form class="uk-form uk-width-medium-1-3" method="post" {{ action "submition" on="submit"}}>
+{{#each model.task.errors.name as |error| }}
+  <div class="uk-alert uk-alert-danger">
+    {{error.message}}
+  </div>
+{{/each}}
+<form class="uk-form uk-align-center" method="post" {{ action "submition" on="submit"}}>
   <fieldset>
-    <legend>Add new board</legend>
+    <legend>Add new task</legend>
     <div class="uk-form-row">
-      {{input type="text" name="taskName" placeholder="taskName" value=model.task.taskName}}
-      {{input type="text" name="taskType"  placeholder="taskType" value=model.task.taskType}}
-      {{input type="text" name="title"  placeholder="title" value=model.task.title}}
-      {{input type="text" name="introText"  placeholder="introText" value=model.task.introText}}
-      {{input type="text" name="fullText"  placeholder="fullText" value=model.task.fullText}}
-      <select {{ action "selectBoard" value="target.value" }} id="tag-type-select" >
-        {{#each model.board as |board| }}
-          <option name="board" selected={{eq model.task.board board.id}} value="{{board.id}}">
-            {{board.name}}
-          </option>
-        {{/each}}
-      </select>
-      {{input class="uk-button" type="submit" value="Add"}}
+
+      <div class="uk-form-row">
+        {{#if validationData.taskName }}
+          <div class="uk-alert-danger">{{validationData.taskName}}</div>
+        {{/if}}
+        {{input type="text" class=(if validationData.taskName "uk-form-danger" "") name="taskName" placeholder="taskName" value=model.task.taskName}}
+      </div>
+
+      <div class="uk-form-row">
+        {{#if validationData.taskType }}
+          <div class="uk-alert-danger">{{validationData.taskType}}</div>
+        {{/if}}
+        {{input type="text" class=(if validationData.taskType "uk-form-danger" "") name="taskType"  placeholder="taskType" value=model.task.taskType}}
+      </div>
+
+      <div class="uk-form-row">
+        {{#if validationData.title }}
+          <div class="uk-alert-danger">{{validationData.title}}</div>
+        {{/if}}
+        {{input type="text" class=(if validationData.title "uk-form-danger" "") name="title"  placeholder="title" value=model.task.title}}
+      </div>
+
+      <div class="uk-form-row">
+        {{#if validationData.introText }}
+          <div class="uk-alert-danger">{{validationData.introText}}</div>
+        {{/if}}
+        {{input type="text" class=(if validationData.introText "uk-form-danger" "") name="introText"  placeholder="introText" value=model.task.introText}}
+      </div>
+
+      <div class="uk-form-row">
+        {{#if validationData.fullText }}
+          <div class="uk-alert-danger">{{validationData.fullText}}</div>
+        {{/if}}
+        {{input type="text" class=(if validationData.introText "uk-form-danger" "") name="fullText"  placeholder="fullText" value=model.task.fullText}}
+      </div>
+      <div class="uk-form-row">
+        <select {{ action "selectBoard" value="target.value" }} id="tag-type-select" >
+          {{#each model.board as |board| }}
+            <option name="board" selected={{eq model.task.board board.id}} value="{{board.id}}">
+              {{board.name}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="uk-form-row">
+        <div class="uk-grid">
+          <div class="uk-width-1-2">
+            {{input class="uk-button" type="submit" value="Add task"}}
+          </div>
+          <div class="uk-width-1-2">
+            {{#link-to "boards" }}
+              {{input class="uk-button" type="submit" value="Cancel"}}
+            {{/link-to}}
+          </div>
+        </div>
+      </div>
     </div>
   </fieldset>
 </form>
