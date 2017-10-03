@@ -45,7 +45,7 @@
       <div class="uk-form-row">
         <select {{ action "selectBoard" value="target.value" }} id="tag-type-select" >
           {{#each model.board as |board| }}
-            <option name="board" selected={{eq model.task.board board.id}} value="{{board.id}}">
+            <option name="board" selected={{eq model.task.board.id board.id}} value="{{board.id}}">
               {{board.name}}
             </option>
           {{/each}}
