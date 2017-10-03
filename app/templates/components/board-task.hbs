@@ -1,12 +1,14 @@
   <div class="uk-panel uk-panel-box uk-panel-box-primary">
+    <a href="#" class="uk-alert-close uk-close"></a>
     <div class="uk-block-primary">{{board-edit item=item }}</div>
         <div class="uk-block-default">
             <ul class="uk-list uk-list-stripped">
-              {{#each item.task as |task| }}
+              {{log item.tasks }}
+              {{#each item.tasks as |task| }}
                   <li>
                     <label>
                       {{#link-to "boards.taskitem" item.id task.id}}
-                          {{task.title}}
+                          {{task.taskName}}
                       {{/link-to}}
                     </label>
                   </li>

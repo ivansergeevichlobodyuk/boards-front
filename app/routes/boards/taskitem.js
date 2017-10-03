@@ -8,5 +8,4 @@ export default Ember.Route.extend({
       board: this.get('store').findAll('board'),
     })
   },
-
 });

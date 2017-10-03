@@ -6,7 +6,6 @@ export default Ember.Controller.extend({
      filteredBoards: Ember.computed('search', function() {
         var search = this.get('category');
         var boards = this.get('model');
-        console.log('boards ', boards);
         if (search) {
           return boards.filterBy('name', search);
         } else {
@@ -16,10 +15,7 @@ export default Ember.Controller.extend({
 
      actions:{
        selectBoard(){
-         console.log('model board ', $("#tag-type-select").find(":selected").val() );
          this.set('model.board',$("#tag-type-select").find(":selected").val());
        }
-
      }
-
   });

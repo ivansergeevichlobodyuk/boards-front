@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   validationData: new Array(),
+  init(){
+    this._super(...arguments);
+
+  },
   actions: {
     submition(){
       this.get('model.task').save().then(() => {
@@ -23,5 +27,6 @@ export default Ember.Controller.extend({
     selectBoard(){
       this.set('model.task.board', $("#tag-type-select").find(":selected").val());
     }
+
   }
 });

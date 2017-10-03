@@ -17,11 +17,11 @@ module.exports = function(environment) {
       }
     },
 
-    contentSecurityPolicyHeader: 'Content-Security-Policy',
-    contentSecurityPolicy: {
-      // ... other stuff here
-      'font-src': "'self' http://localhost:4200",
-    },
+    // contentSecurityPolicyHeader: 'Content-Security-Policy',
+    // contentSecurityPolicy: {
+    //   // ... other stuff here
+    //   'font-src': "'self' http://localhost:4200",
+    // },
 
     APP: {
       // Here you can pass flags/options to your application instance
